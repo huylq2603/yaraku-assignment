@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,10 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::get('/books/export', '\App\Http\Controllers\BookController@export');
+Route::resource('books', '\App\Http\Controllers\BookController');
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
