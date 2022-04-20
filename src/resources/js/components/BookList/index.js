@@ -82,10 +82,12 @@ class BookList extends Component {
                 <tr key={index} onClick={() => { this.props.showBookDetail && this.props.showBookDetail(el); }}>
                     <td>{el.title}</td>
                     <td>{el.author}</td>
-                    <td><button onClick={(e) => {
-                        e.stopPropagation();
-                        this.props.deleteBook && this.props.deleteBook(el.id);
-                    }} className="btn red">Delete</button></td>
+                    <td><button className="btn red"
+                        disabled={!el.id}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            this.props.deleteBook && this.props.deleteBook(el.id);
+                        }} >Delete</button></td>
                 </tr>
             )
         })

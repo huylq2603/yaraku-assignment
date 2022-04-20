@@ -88,11 +88,17 @@ class BookInput extends Component {
                         </div>
                         <div class="card-action">
                             {/* Inputing new book == no book id */}
-                            {!this.state.book.id && <button className="btn blue" onClick={() => { this.props.addBook && this.props.addBook(this.state.book) }}>Add</button>}
+                            {!this.state.book.id &&
+                                <button className="btn blue"
+                                    onClick={() => { this.props.addBook && this.props.addBook(this.state.book) }}
+                                    disabled={!(this.state.book.title && this.state.book.author)}
+                                >Add</button>
+                            }
                             {this.state.book.id &&
                                 <div style={{ display: "inline-block" }}>
                                     <button className="btn blue"
-                                        onClick={() => { this.props.updateBook && this.props.updateBook(this.state.book) }}>Update</button>
+                                        onClick={() => { this.props.updateBook && this.props.updateBook(this.state.book) }}
+                                        disabled={!(this.state.book.title && this.state.book.author)}>Update</button>
                                     <button className="btn grey" style={{ margin: "0 15px" }}
                                         onClick={() => { this.props.refreshBookDetail && this.props.refreshBookDetail() }}>Cancel</button>
                                 </div>

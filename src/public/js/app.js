@@ -32286,7 +32286,8 @@ var BookInput = /*#__PURE__*/function (_Component) {
         className: "btn blue",
         onClick: function onClick() {
           _this2.props.addBook && _this2.props.addBook(_this2.state.book);
-        }
+        },
+        disabled: !(this.state.book.title && this.state.book.author)
       }, "Add"), this.state.book.id && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
           display: "inline-block"
@@ -32295,7 +32296,8 @@ var BookInput = /*#__PURE__*/function (_Component) {
         className: "btn blue",
         onClick: function onClick() {
           _this2.props.updateBook && _this2.props.updateBook(_this2.state.book);
-        }
+        },
+        disabled: !(this.state.book.title && this.state.book.author)
       }, "Update"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn grey",
         style: {
@@ -32579,11 +32581,12 @@ var BookList = /*#__PURE__*/function (_Component) {
             _this2.props.showBookDetail && _this2.props.showBookDetail(el);
           }
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, el.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, el.author), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "btn red",
+          disabled: !el.id,
           onClick: function onClick(e) {
             e.stopPropagation();
             _this2.props.deleteBook && _this2.props.deleteBook(el.id);
-          },
-          className: "btn red"
+          }
         }, "Delete")));
       });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
