@@ -1,0 +1,34 @@
+.bookList tbody {
+    display: block;
+    height: 35vh;
+    overflow: auto;
+}
+
+.bookList thead,
+.bookList tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.bookList thead {
+    width: calc(100% - 1em);
+}
+
+.bookList table {
+    width: 100%;
+}
+
+.bookList tbody tr:hover,
+.bookList thead th:hover {
+    cursor: pointer;
+}
+
+.attract {
+    user-select: none;
+    color: cornflowerblue;
+}
+
+.attract:hover {
+    font-size: large;
+}
