@@ -135,7 +135,7 @@ class BookController extends Controller
 
                     foreach ($exportFields as $key => $val) {
                         if ($val) {
-                            $content .= "," . $book[$key];
+                            $content .= "," . "\"" . $book[$key] . "\"";
                         }
                     }
 
